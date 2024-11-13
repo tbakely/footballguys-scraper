@@ -1,0 +1,11 @@
+version: '3'
+services:
+  scraper:
+    build: .  # This tells Docker Compose to use the Dockerfile in the current directory
+    image: footballguys-scraper
+    volumes:
+      - "${OUTPUT_DIR}:/app/footballguys_scraper/output"  # Map the host directory to the container's output folder
+    environment:
+      - YEAR=${YEAR}  # Pass the year dynamically
+    command: ["python", "run_spider.py", "--year", "${YEAR}"]
+

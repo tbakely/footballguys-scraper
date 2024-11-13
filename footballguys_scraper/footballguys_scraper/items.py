@@ -6,7 +6,11 @@
 import scrapy
 
 
-class FootballguysScraperItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class SnapCountItem(scrapy.Item):
+    team = scrapy.Field()
+    year = scrapy.Field()
+    week = scrapy.Field()
+    position = scrapy.Field()
+    player = scrapy.Field()
+    snap_count = scrapy.Field()
+    snap_percent = scrapy.Field()
